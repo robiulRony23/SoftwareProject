@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Admin Page</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="global.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="nav.css">
+</head>
+
+
+
+<body class="bg text-white">
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div id="main">
+        <nav class="navbar navbar-default navbar-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button class="navbar-brand openbtn" onclick="openNav()">☰</button>
+                    <a class="navbar-brand" href="#">DepartmentPlus</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Create class</a></li>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-firestore.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyB1PLyH0TLwXyxNUjGw2OZkrGMAcADgveo",
+            authDomain: "departmentplus-e0b30.firebaseapp.com",
+            databaseURL: "https://departmentplus-e0b30.firebaseio.com",
+            projectId: "departmentplus-e0b30",
+            storageBucket: "departmentplus-e0b30.appspot.com",
+            messagingSenderId: "396719778425"
+        };
+        firebase.initializeApp(config);
+        //make auth and database references
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+    </script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="admin.js"></script>
+
+</body>
+
+</html>

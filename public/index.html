@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Login Page</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="global.css" type="text/css" rel="stylesheet">
+</head>
+
+
+
+<body class="bg text-white">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12 col-lg-4"></div>
+
+            <div class="center col-md-4 col-sm-4 col-xs-12 col-lg-4">
+
+                <div class="row" id="formRow">
+                    <!--sign up form start-->
+                    <div class="form-container display-block" id="divForSignInForm">
+
+                        <form id="signIn-form">
+                            <h1>Login</h1>
+                            <div class="form-group">
+                                <label for="inputEmail">Email</label>
+                                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword">Password</label>
+                                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox"> Remember me</label>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-block">Login</button>
+                        </form>
+                        <!--form end-->
+
+                        <div class="row gap">
+                            <p> New in <b>DepartmentPlus </b> ? <span class="btn btn-danger" id="createAccountButton"> Create Account</span> </p>
+                        </div>
+
+                    </div>
+
+                    <div class="display-none" id='divForCreateAccountForm'>
+                        <ul class="nav nav-tabs nav-justified" id="loginForm">
+                            <li class="active"><a href="#adminDiv">Admin</a></li>
+                            <li><a href="#teacherDiv">Teacher</a></liclas>
+                                <li><a href="#studentDiv">Student</a></li>
+                        </ul>
+
+                        <form class="form-container">
+                            <div class="tab-content">
+                                <div class="tab-pane active">
+                                    <form id="adminForm">
+                                        <h1>Admin Account</h1>
+                                        <div class="form-group">
+                                            <label for="inputName">Name</label>
+                                            <input type="text" class="form-control" id="inputName" placeholder="Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail">Email</label>
+                                            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword">Password</label>
+                                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputCofirmPassword">Confirm Password</label>
+                                            <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Confirm Password">
+                                        </div>
+                                        <span id='message'></span>
+                                        <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                                    </form>
+                                </div>
+                                <div class="tab-pane" id="adminDiv">
+                                    <form id="adminForm">
+                                        <h1>Admin Account</h1>
+                                        <div class="form-group">
+                                            <label for="inputName">Name</label>
+                                            <input type="text" class="form-control" id="inputName" placeholder="Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail">Email</label>
+                                            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword">Password</label>
+                                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputCofirmPassword">Confirm Password</label>
+                                            <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Confirm Password">
+                                        </div>
+                                        <span id='adminMessage'></span>
+                                        <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                                    </form>
+                                </div>
+
+                                <div class="tab-pane" id="teacherDiv">
+                                    <form id="teacherForm">
+                                        <h1>Teacher Account</h1>
+                                        <div class="form-group">
+                                            <label for="inputName">Name</label>
+                                            <input type="text" class="form-control" id="inputName" placeholder="Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail">Email</label>
+                                            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword">Password</label>
+                                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputCofirmPassword">Confirm Password</label>
+                                            <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Confirm Password">
+                                        </div>
+                                        <span id='teacherMessage'></span>
+                                        <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                                    </form>
+                                </div>
+
+                                <div class="tab-pane" id="studentDiv">
+                                    <form id="studentForm">
+                                        <h1>Student Account</h1>
+                                        <div class="form-group">
+                                            <label for="inputName">Name</label>
+                                            <input type="text" class="form-control" id="inputName" placeholder="Name">
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="inputClassSemester">Semester ID</label>
+                                            <p> <label for="yearList">year </label>
+                                                <select class="text-black" onchange="" id="yearList">
+                                                    <option value="1">First year</option>
+                                                    <option value="2">Second year</option>
+                                                    <option value="3">Third year</option>
+                                                    <option value="4">Fourth year</option>
+                                                    <option value="5">Masters </option>
+                                                </select><br>
+                                                <label for="semesterList"> Semester </label>
+                                                <select class="text-black" onchange="" id="semesterList">
+                                                    <option value="1">First Semester</option>
+                                                    <option value="2">Second Semester</option>
+                                                </select>
+                                            </p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail">Email</label>
+                                            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword">Password</label>
+                                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputCofirmPassword">Confirm Password</label>
+                                            <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Confirm Password">
+                                        </div>
+                                        <span id='studentMessage'></span>
+                                        <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12 col-lg-4"></div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyB1PLyH0TLwXyxNUjGw2OZkrGMAcADgveo",
+            authDomain: "departmentplus-e0b30.firebaseapp.com",
+            databaseURL: "https://departmentplus-e0b30.firebaseio.com",
+            projectId: "departmentplus-e0b30",
+            storageBucket: "departmentplus-e0b30.appspot.com",
+            messagingSenderId: "396719778425"
+        };
+        firebase.initializeApp(config);
+        const auth = firebase.auth();
+        const firestore = firebase.firestore();
+        const database = firebase.database();
+    </script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="account.js"></script>
+
+
+
+</body>
+
+</html>

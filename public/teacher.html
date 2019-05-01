@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Teacher Page</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="global.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="nav.css">
+</head>
+
+
+
+<body class="bg ">
+    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top text-white">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">DepartmentPlus</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right">
+                <ul class="nav navbar-nav">
+                    <li><a class="btn" data-toggle="modal" data-target="#modalProfile">Profile</a></li>
+                    <li><a class="btn " data-toggle="modal" data-target="#modalCreateClass">Create class</a></li>
+                    <li><a class="btn" onclick="signOut()" id="logoutButtonTeacher">Logout</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div id="main container" style="margin-top:50px">
+
+        <div class="row">
+            <div class=" row col-md-8 col-sm-8 col-xs-12 col-lg-8" id="classCardDiv">
+
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12 col-lg-4"></div>
+        </div>
+
+        <div id="modalProfile" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Profile</h4>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="modalCreateClass" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title text-white"><b>Create a new class</b></h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <form id="createClassForm">
+                            <div class="form-group">
+                                <label for="inputClassTitle">Title</label>
+                                <input autocomplete="off" type="text" class="form-control" id="inputClassTitle" placeholder="Class title">
+                            </div>
+                            <div class="form-group">
+                                <label for="datepicker">Date </label>
+                                <input autocomplete="off" type="text" class="form-control" id="datepicker" placeholder="Date" />
+                            </div>
+                            <div class="form-group">
+                                <label for="inputClassSemester">Semester ID</label>
+                                <p> <label for="yearListTeacher">year </label>
+                                    <select onchange="" id="yearListTeacher">
+                                        <option value="1">First year</option>
+                                        <option value="2">Second year</option>
+                                        <option value="3">Third year</option>
+                                        <option value="4">Fourth year</option>
+                                        <option value="5">Masters </option>
+                                    </select>
+                                    <label for="semesterListTeacher"> Semester </label>
+                                    <select onchange="" id="semesterListTeacher">
+                                        <option value="1">First Semester</option>
+                                        <option value="2">Second Semester</option>
+                                    </select>
+                                </p>
+                            </div>
+                            <div class="form-group">
+                                <hr>
+                                <button type="submit" class="btn btn-success">submit</button>
+                                <button type="submit" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyB1PLyH0TLwXyxNUjGw2OZkrGMAcADgveo",
+            authDomain: "departmentplus-e0b30.firebaseapp.com",
+            databaseURL: "https://departmentplus-e0b30.firebaseio.com",
+            projectId: "departmentplus-e0b30",
+            storageBucket: "departmentplus-e0b30.appspot.com",
+            messagingSenderId: "396719778425"
+        };
+        firebase.initializeApp(config);
+        const auth = firebase.auth();
+        const firestore = firebase.firestore();
+        const database = firebase.database();
+    </script>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" rel="stylesheet" />
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="teacher.js"></script>
+    <script src="account.js"></script>
+
+</body>
+
+</html>
