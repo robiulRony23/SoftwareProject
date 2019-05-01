@@ -1,8 +1,9 @@
 .jumbotron {
-    width: 90%;
-    height: 120px;
+    width: 70%;
+    height: 200px;
     margin: auto;
-    background-color:  rgb(196, 205, 207);
+    text-align: center;
+    background-color:  rgb(167, 206, 214);
     padding-left: 45px;
     padding-top: 5px; 
     padding-bottom: 5px;

@@ -64,6 +64,25 @@ function loadClass() {
 
 }
 
+auth.onAuthStateChanged((user) => {
+    if (user) {
+        const profileDiv = document.querySelector('#teacherPorfileDiv');
+        const queryTeacher = database.ref('Teachers/' + auth.currentUser.uid);
+        queryTeacher.once("value").then(function (snapshot) {
+            const Name = snapshot.child('Name').val();
+            const html = `
+            <h4>Name : ${Name}</h4>
+            <h4>Email : ${user.email}</h4>
+            <h4>Role : Teacher</h4>
+        `;
+            profileDiv.innerHTML = html;
+        })
+
+    } else {
+
+    }
+})
+
 //add information of new class
 const createClassForm = document.querySelector("#createClassForm");
 createClassForm.addEventListener('submit', (e) => {
@@ -146,7 +165,7 @@ function loadClassroom() {
     localStorage.setItem("classRoomId", id);
     //localStorage.setItem("holderType", "t");
     console.log("classRoomId", id);
-    console.log("check it teacher: "+id);
+    console.log("check it teacher: " + id);
     location.href = 'classroom.html';
 }
 
